@@ -1,0 +1,25 @@
+.app-main {
+    box-sizing: border-box;
+    
+    
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5em;
+    
+    padding: 1em;
+    
+    border: 2px solid;
+    border-radius: 5px;
+    }
+    
+    .search-and-filter {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+
+    .add-button-div {
+        display: flex;
+        justify-content: space-around;
+    }
