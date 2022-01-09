@@ -1,8 +1,8 @@
-.add-button-div {
-    display: flex;
-    justify-content: space-around;
-}
 
+
+.add-button-div input {
+    margin-top: 1em;
+}
 .add-button {
     margin-top: 1em;
 }

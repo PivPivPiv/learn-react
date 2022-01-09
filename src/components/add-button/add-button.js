@@ -6,7 +6,13 @@ export default class AddButton extends Component {
 
     render (){
         return (
-            <div className='add-button-div'>
+            <form className='add-button-div '>
+                <input  type="text"
+                        className='form-contol'
+                        onChange={this.onLabelChange}
+                        placeholder="What needs to be done"
+                />
+                 
                 <button 
                     type ='button'
                     className ='btn btn-outline-secondary btn-sm add-button'
@@ -14,7 +20,7 @@ export default class AddButton extends Component {
                 > 
                     Add Item
                 </button>
-            </div>
+            </form>
         );
     };
 };

@@ -3,26 +3,6 @@ import './todo-list-item.css';
 
 export default class TodoListItem extends React.Component {
 
-    constructor () {
-        super ();
-
-        this.onLabelClick = () => {
-            this.setState( ( {done} ) => {
-                 return {
-                     done: !done
-                 };
-            } );
-        };
-
-        this.onExclamationClick = () => {
-            this.setState( ( {important} ) => {
-                return {
-                    important: !important
-                };
-            } );
-        };
-    };  
-
     render () {
         const { label, onDeleted, onToggleImportant, 
             onToggleDone, done, important } = this.props;
@@ -38,7 +18,6 @@ export default class TodoListItem extends React.Component {
             <span className={classNames}>
                 <span 
                     className='todo-list-item-label' 
-                    
                     onClick = { onToggleDone } 
                 >
                         { label } 
@@ -48,7 +27,6 @@ export default class TodoListItem extends React.Component {
                     <button 
                         type='button'
                         className='btn btn-outline-success btn-sm'
-                        
                         onClick={ onToggleImportant }
                     > 
                         <i className='fa fa-exclamation' ></i>
