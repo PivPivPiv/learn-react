@@ -5,7 +5,7 @@ export default class TodoListItem extends React.Component {
 
     render () {
         const { label, onDeleted, onToggleImportant, 
-            onToggleDone, done, important } = this.props;
+            onToggleDone, done, important} = this.props;
 
         let classNames = 'todo-list-item';
         if (done) {
@@ -14,13 +14,14 @@ export default class TodoListItem extends React.Component {
         if (important) {
             classNames += ' important'
         };
+
         return (
             <span className={classNames}>
                 <span 
                     className='todo-list-item-label' 
                     onClick = { onToggleDone } 
                 >
-                        { label } 
+                    { label } 
                 </span>
 
                 <span className='button-group'>

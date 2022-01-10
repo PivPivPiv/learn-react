@@ -18,6 +18,7 @@ export default class App extends Component {
             this.createTodoItem("Drink Coffe"),
             this.createTodoItem("Take a lunch"),
             ],
+        searchValue: '',
     }; 
     
     createTodoItem(label) {
@@ -25,7 +26,8 @@ export default class App extends Component {
             label,
             important: false,
             done: false,
-            id: this.maxId++
+            id: this.maxId++,
+            display: true,
         };
     };
 
@@ -91,15 +93,36 @@ export default class App extends Component {
         });
     };
 
+    getSearchValue = (e) => {
+        this.setState( ({searchValue})=> {
+            return {
+                searchValue: e.target.value
+            
+            };
+            
+        });
+        console.log(this.state.searchValue);
+
+    };
+    
+    searchFilter = () => {
+        // 1. получить значение поля Search
+        // 2. взять label конкретного элемента
+        // 3. выяснить есть ли search в элементе setState (todoData{display}) = Search.includes(label)
+        // 4. установить значение свойства display 
+    };
+
     render() {
         const {todoData} = this.state;
         const doneCount = todoData.filter( (el) => el.done === true).length;
         const todoCount = todoData.length - doneCount; 
         return ( 
-            <div className='app-main'> 
+            <div className='app-main '> 
                 <AppHeader toDo = {todoCount} done = {doneCount} /> 
                 <div className='search-and-filter'>
-                    <SearchPanel />
+                    <SearchPanel 
+                    onSearchFieldChange={ this.getSearchValue }
+                    />
                     <ItemStatusFilter />
                 </div>
                 <TodoList 
