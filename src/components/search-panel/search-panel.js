@@ -3,13 +3,24 @@ import './search-panel.css';
 
 export default class SearchPanel extends Component{
 
+    state = {
+        term: '',
+    };
+
+    onSearchChange = (e) => {
+        const term = e.target.value;
+        this.setState({ term });
+        this.props.onSearchChange(term);
+    };
+
     render(){
-        const {onSearchFieldChange} = this.props;
+        
 
         return ( <div>
                     <input  className='search-input' 
                             placeholder="Поиск" 
-                            onChange={ onSearchFieldChange }
+                            value={this.state.term}
+                            onChange={ this.onSearchChange} 
                     />
                  
                  </div>
